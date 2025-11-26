@@ -1,6 +1,6 @@
-# music-emotion-classifier
+# speech-emotion-classifier
 
-A simple project for classifying music emotion using audio features and machine learning.
+A simple project for classifying speech emotion using audio features and machine learning.
 
 ## Features
 - Extracts audio features (e.g., MFCC, chroma, spectral contrast)
