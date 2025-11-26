@@ -26,18 +26,30 @@
   <form action="{{ url_for('classify') }}" method="post">
     <button type="submit">Classify Emotion</button>
   </form>
+
+{% if recorded %}
+  <p>Recorded file</p>
+  <form action="{{ url_for('classify') }}" method="post">
+    <button type="submit">Classify Emotion</button>
+  </form>
+{% endif %}
+
+{% elif emotion %}
+  <h2>Emotion detected: {{ emotion }}</h2>
+  <form action="{{ url_for('back') }}" method="get">
+    <button type="submit">Classify Another Song</button>
+  </form>
+
 {% else %}
   <form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
     <input type="file" name="file">
     <button type="submit">Upload</button>
   </form>
-{% endif %}
 
-{% if emotion %}
-  <h2>Emotion detected: {{ emotion }}</h2>
-  <form action="{{ url_for('back') }}" method="get">
-    <button type="submit">Classify Another Song</button>
-  </form>
+  <br>
+    <button id="start">Start Recording</button>
+    <button id="stop">Stop Recording</button>
+
 {% endif %}
 
 </body>

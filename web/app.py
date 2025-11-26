@@ -1,13 +1,11 @@
 '''main app.
-next step: change index.html so that it changes based on actions such as classify and upload;
-add record feature (after a basic app can run)
+next step: add pv recording feature
 '''
 
 
 import os
 from flask import Flask, flash, request, redirect, url_for, render_template
 from werkzeug.utils import secure_filename
-from web.recorder import record_and_save
 import web.classify as clf
 
 app = Flask(__name__)
@@ -23,7 +21,7 @@ def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route('/upload', methods=['POST'])
+@app.route('/upload_file', methods=['POST'])
 def upload_file():
     if request.method == 'POST':
         # check if the post request has the file part
@@ -57,11 +55,19 @@ def classify():
         if os.path.exists(os.path.join(app.config['UPLOAD_FOLDER'], filename)):
             os.remove(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
-        return render_template('index.html', uploaded=filename, emotion=emotion)
+        return render_template('index.html', emotion=emotion)
 
 @app.route('/back', methods=['GET'])
 def back():
-    return render_template('index.html')
+    return redirect(url_for('index'))
+
+
+# added record route
+@app.route('/record', methods=['POST'])
+def record():
+    request.files['audio'].save(os.path.join(app.config['UPLOAD_FOLDER'], 'audio.wav'))
+    return render_template('index.html', recorded=True)
+
 
 
 if __name__ == '__main__':
