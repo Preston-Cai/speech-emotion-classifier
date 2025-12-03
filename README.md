@@ -45,9 +45,12 @@ cd src
 python main.py
 ```
 
-# Next Steps
-1. Add command line tools for single audio emotion classification.
-2. Improve web app interface style.
+# Next Steps/Possible Expansions
+1. Add commands for single audio emotion classification.
+2. Improve web app user interface.
+3. Denoise before processing audio.
+
+4. Train more advanced models (e.g. CNN) on audio waveform/spectrograms
 
 
 # Project Structure
