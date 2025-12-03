@@ -94,8 +94,8 @@ def use_rf(tt_data):
     # df_compare = pd.DataFrame({'predicted': y_pred, 'actual': tt_data.y_test})
     # print(df_compare.head(10))
 
-
-save_csv()
-df = create_df()
-tt_data = split_data(df)
-use_rf(tt_data)
+if __name__ == '__main__':
+    save_csv()
+    df = create_df()
+    tt_data = split_data(df)
+    use_rf(tt_data)
