@@ -25,6 +25,7 @@ def save_csv():
     data = []
 
     # loading each files in the dir, extract features, and generate the dataset
+    # Audio data set folder should have subfolders (e.g. kaggle/Actor_01)
     for subfolder in os.listdir(folder_path):
         subfolder_path = os.path.join(folder_path, subfolder)
 

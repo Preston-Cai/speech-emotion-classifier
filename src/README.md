@@ -2,7 +2,7 @@
 
 Source code for feature engineering and model training and testing.
 
- - `main.py` iterates over audio dataset, saves a csv of extracted features and corresponding emotion-ids, splits train-test data, fits a random forest model, and tests the accuracy.
+ - `main.py` iterates over audio dataset, saves a csv (in the current directory) of extracted feature values and corresponding emotion-ids, splits train-test data, fits a random forest model, and tests the accuracy.
  - `extract_features.py` extracted key features from the audio.
  - `train_model.py` trains and saves a model in pickle format.
 

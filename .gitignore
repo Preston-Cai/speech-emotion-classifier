@@ -15,8 +15,8 @@ ENV/
 env/
 pyvenv.cfg
 
-# Jupyter notebooks
-.ipynb_checkpoints
+# Node modules
+node_modules/
 
 # IDEs
 .vscode/
@@ -27,8 +27,11 @@ pyvenv.cfg
 *.h5
 *.npy
 
+# Jupyter notebooks
+.ipynb_checkpoints
+
 # Logs
 *.log
 
-# others
+# Others
 .env
