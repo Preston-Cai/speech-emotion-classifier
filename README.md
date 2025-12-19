@@ -59,19 +59,7 @@ python main.py
 ```
 speech-emotion-classifier/
 ├── .gitignore
-├── legacy/
-│   ├── js/
-│   │   ├── bundle.js
-│   │   ├── package-lock.json
-│   │   ├── package.json
-│   │   ├── rollup.config.mjs
-│   │   └── script_new.js
-│   ├── py/
-│   │   ├── hello.py
-│   │   ├── recorder.py
-│   │   ├── test.py
-│   │   └── use_mlp.py
-│   └── README.md
+├── legacy/  # Legacy code
 ├── model/
 │   └── emotion_classifier.pkl
 ├── README.md
