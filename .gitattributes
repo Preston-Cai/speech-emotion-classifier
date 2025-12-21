@@ -1,0 +1,2 @@
+# Ignore legacy/ in language stats
+legacy/** linguist-generated=true
